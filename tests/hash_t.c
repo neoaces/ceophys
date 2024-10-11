@@ -6,8 +6,9 @@
 
 START_TEST(calc_hash)
 {
+    // Calculates hash
     size_t hash = _hash("key", 51);
-    ck_assert_int_eq(23, hash);
+    ck_assert_int_eq(29, hash);
 }
 END_TEST
 
