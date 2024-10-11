@@ -1,6 +1,5 @@
 #include <hmap.h>
 #include <neolog.h>
-#include <main.h>
 
 static const nlog_logger_t logger_config = {.LogLevel = DEBUG, "neophys"};
 
