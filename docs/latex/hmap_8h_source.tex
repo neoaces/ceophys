@@ -1,0 +1,33 @@
+\doxysection{hmap.\+h}
+\hypertarget{hmap_8h_source}{}\label{hmap_8h_source}\index{neolib/hmap.h@{neolib/hmap.h}}
+\mbox{\hyperlink{hmap_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ CONFIG\_SIZE\ 51}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ KEY\_MAX\ 17\ }\textcolor{comment}{//\ MAX\ KEY\ SIZE:\ 16\ CHARACTERS}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ VALUE\_MAX\ 51\ }\textcolor{comment}{//\ MAX\ VALUE\ SIZE:\ 50\ CHARACTERS}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16}{NodeType}}\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16a1e2f89e867cd91c3de2ea9fbd2ef96a3}{Integer}}\ =\ 0,}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16ad67b0ee7230dcecb610254e4e5e589cd}{Float}}\ =\ 1,}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16ade17ec82ff106e0c2b4417f5ca231eae}{String}}\ =\ 2,}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{struct_hash_table}{HashTable}}\ =\ 3,}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node}{Node}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16}{NodeType}}\ \mbox{\hyperlink{struct_node_a6297a673269e91293bc50568e573b686}{type}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_node_a8471a0a090e8006639deae5833c7e356}{key}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_node_a520bf86af21ca233eb9f58e9e28c6576}{value}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node}{Node}}*\ \mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{00020\ \}\ \mbox{\hyperlink{hmap_8h_ab8e3cdf7da5dcf21b84260a056e65e87}{node\_t}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_hash_table}{HashTable}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_hash_table_a7a7880d4869f134cdc5cd5f7f1bc4cc5}{table\_size}};}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{struct_node}{node\_t}}*\ \mbox{\hyperlink{struct_hash_table_ada7327c1081e6c139b9b9d26153f63f6}{start}}[];}
+\DoxyCodeLine{00025\ \}\ \mbox{\hyperlink{hmap_8h_ae2691160db1e529617604aeaa3f54077}{hashtable\_t}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{hmap_8h_a5c2f64663ed8dfb76218ba4bcbb7310c}{\_hash}}(\textcolor{keywordtype}{char}*\ key,\ \textcolor{keywordtype}{size\_t}\ array\_size);}
+
+\end{DoxyCode}

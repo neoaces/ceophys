@@ -1,0 +1,86 @@
+\doxysection{neolog/neolog.h File Reference}
+\hypertarget{neolog_8h}{}\label{neolog_8h}\index{neolog/neolog.h@{neolog/neolog.h}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnlog___logger}{nlog\+\_\+\+Logger}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96}{nlog\+\_\+\+Log\+Level}} \mbox{\hyperlink{neolog_8h_a7c46f0ec0ea7fe6df2e284029dcc35f4}{nlog\+\_\+loglevel\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structnlog___logger}{nlog\+\_\+\+Logger}} \mbox{\hyperlink{neolog_8h_a0ed9d8a56543f24cd089da724c7e9222}{nlog\+\_\+logger\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96}{nlog\+\_\+\+Log\+Level}} \{ \mbox{\hyperlink{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96a2fd6f336d08340583bd620a7f5694c90}{ERROR}} = 0
+, \mbox{\hyperlink{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96a748005382152808a72b1a9177d9dc806}{INFO}} = 1
+, \mbox{\hyperlink{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96a0593585da9181e972974c1274d8f2b4f}{DEBUG}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Level of logging, ERROR \texorpdfstring{$<$}{<} INFO \texorpdfstring{$<$}{<} DEBUG. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{neolog_8h_a3fad4f0b5928113f1f9bb10321f66dd9}{nlog\+\_\+log}} (const \mbox{\hyperlink{neolog_8h_a0ed9d8a56543f24cd089da724c7e9222}{nlog\+\_\+logger\+\_\+t}} \texorpdfstring{$\ast$}{*}logger\+\_\+config, \mbox{\hyperlink{neolog_8h_a7c46f0ec0ea7fe6df2e284029dcc35f4}{nlog\+\_\+loglevel\+\_\+t}} level, const char \texorpdfstring{$\ast$}{*}message,...)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{neolog_8h_ac31e18c39446ac8880fc81df34c49e3e}{nlog\+\_\+levelstr}} (\mbox{\hyperlink{neolog_8h_a7c46f0ec0ea7fe6df2e284029dcc35f4}{nlog\+\_\+loglevel\+\_\+t}} level)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{neolog_8h_a0ed9d8a56543f24cd089da724c7e9222}\index{neolog.h@{neolog.h}!nlog\_logger\_t@{nlog\_logger\_t}}
+\index{nlog\_logger\_t@{nlog\_logger\_t}!neolog.h@{neolog.h}}
+\doxysubsubsection{\texorpdfstring{nlog\_logger\_t}{nlog\_logger\_t}}
+{\footnotesize\ttfamily \label{neolog_8h_a0ed9d8a56543f24cd089da724c7e9222} 
+typedef struct \mbox{\hyperlink{structnlog___logger}{nlog\+\_\+\+Logger}} \mbox{\hyperlink{neolog_8h_a0ed9d8a56543f24cd089da724c7e9222}{nlog\+\_\+logger\+\_\+t}}}
+
+\Hypertarget{neolog_8h_a7c46f0ec0ea7fe6df2e284029dcc35f4}\index{neolog.h@{neolog.h}!nlog\_loglevel\_t@{nlog\_loglevel\_t}}
+\index{nlog\_loglevel\_t@{nlog\_loglevel\_t}!neolog.h@{neolog.h}}
+\doxysubsubsection{\texorpdfstring{nlog\_loglevel\_t}{nlog\_loglevel\_t}}
+{\footnotesize\ttfamily \label{neolog_8h_a7c46f0ec0ea7fe6df2e284029dcc35f4} 
+typedef enum \mbox{\hyperlink{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96}{nlog\+\_\+\+Log\+Level}} \mbox{\hyperlink{neolog_8h_a7c46f0ec0ea7fe6df2e284029dcc35f4}{nlog\+\_\+loglevel\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96}\index{neolog.h@{neolog.h}!nlog\_LogLevel@{nlog\_LogLevel}}
+\index{nlog\_LogLevel@{nlog\_LogLevel}!neolog.h@{neolog.h}}
+\doxysubsubsection{\texorpdfstring{nlog\_LogLevel}{nlog\_LogLevel}}
+{\footnotesize\ttfamily \label{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96} 
+enum \mbox{\hyperlink{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96}{nlog\+\_\+\+Log\+Level}}}
+
+
+
+Level of logging, ERROR \texorpdfstring{$<$}{<} INFO \texorpdfstring{$<$}{<} DEBUG. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!neolog.h@{neolog.h}}\index{neolog.h@{neolog.h}!ERROR@{ERROR}}}\Hypertarget{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96a2fd6f336d08340583bd620a7f5694c90}\label{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96} 
+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!neolog.h@{neolog.h}}\index{neolog.h@{neolog.h}!INFO@{INFO}}}\Hypertarget{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96a748005382152808a72b1a9177d9dc806}\label{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96} 
+INFO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEBUG@{DEBUG}!neolog.h@{neolog.h}}\index{neolog.h@{neolog.h}!DEBUG@{DEBUG}}}\Hypertarget{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96a0593585da9181e972974c1274d8f2b4f}\label{neolog_8h_a888fea3b44f1e5d1256ef5f9019eed96} 
+DEBUG&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{neolog_8h_ac31e18c39446ac8880fc81df34c49e3e}\index{neolog.h@{neolog.h}!nlog\_levelstr@{nlog\_levelstr}}
+\index{nlog\_levelstr@{nlog\_levelstr}!neolog.h@{neolog.h}}
+\doxysubsubsection{\texorpdfstring{nlog\_levelstr()}{nlog\_levelstr()}}
+{\footnotesize\ttfamily \label{neolog_8h_ac31e18c39446ac8880fc81df34c49e3e} 
+const char \texorpdfstring{$\ast$}{*} nlog\+\_\+levelstr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{neolog_8h_a7c46f0ec0ea7fe6df2e284029dcc35f4}{nlog\+\_\+loglevel\+\_\+t}}}]{level}{}\end{DoxyParamCaption})}
+
+\Hypertarget{neolog_8h_a3fad4f0b5928113f1f9bb10321f66dd9}\index{neolog.h@{neolog.h}!nlog\_log@{nlog\_log}}
+\index{nlog\_log@{nlog\_log}!neolog.h@{neolog.h}}
+\doxysubsubsection{\texorpdfstring{nlog\_log()}{nlog\_log()}}
+{\footnotesize\ttfamily \label{neolog_8h_a3fad4f0b5928113f1f9bb10321f66dd9} 
+void nlog\+\_\+log (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{neolog_8h_a0ed9d8a56543f24cd089da724c7e9222}{nlog\+\_\+logger\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{logger\+\_\+config}{, }\item[{\mbox{\hyperlink{neolog_8h_a7c46f0ec0ea7fe6df2e284029dcc35f4}{nlog\+\_\+loglevel\+\_\+t}}}]{level}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{message}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+

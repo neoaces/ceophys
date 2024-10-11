@@ -1,0 +1,126 @@
+\doxysection{neolib/hmap.h File Reference}
+\hypertarget{hmap_8h}{}\label{hmap_8h}\index{neolib/hmap.h@{neolib/hmap.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_node}{Node}}
+\item 
+struct \mbox{\hyperlink{struct_hash_table}{Hash\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{hmap_8h_aa40c2609604c572c89d9bf1063a0a08b}{CONFIG\+\_\+\+SIZE}}~51
+\item 
+\#define \mbox{\hyperlink{hmap_8h_a609683a0c8de0ce9cdd1e696e71a6f07}{KEY\+\_\+\+MAX}}~17
+\item 
+\#define \mbox{\hyperlink{hmap_8h_aacdeb883b8cfc24b1ea6133e987a556d}{VALUE\+\_\+\+MAX}}~51
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_node}{Node}} \mbox{\hyperlink{hmap_8h_ab8e3cdf7da5dcf21b84260a056e65e87}{node\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_hash_table}{Hash\+Table}} \mbox{\hyperlink{hmap_8h_ae2691160db1e529617604aeaa3f54077}{hashtable\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16}{Node\+Type}} \{ \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16a1e2f89e867cd91c3de2ea9fbd2ef96a3}{Integer}} = 0
+, \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16ad67b0ee7230dcecb610254e4e5e589cd}{Float}} = 1
+, \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16ade17ec82ff106e0c2b4417f5ca231eae}{String}} = 2
+, \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16a1630094451c40b6f110f0ec80c02baba}{Hash\+Table}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{hmap_8h_a5c2f64663ed8dfb76218ba4bcbb7310c}{\+\_\+hash}} (char \texorpdfstring{$\ast$}{*}key, size\+\_\+t array\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Calculates the hash for the given key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{hmap_8h_aa40c2609604c572c89d9bf1063a0a08b}\index{hmap.h@{hmap.h}!CONFIG\_SIZE@{CONFIG\_SIZE}}
+\index{CONFIG\_SIZE@{CONFIG\_SIZE}!hmap.h@{hmap.h}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_SIZE}{CONFIG\_SIZE}}
+{\footnotesize\ttfamily \label{hmap_8h_aa40c2609604c572c89d9bf1063a0a08b} 
+\#define CONFIG\+\_\+\+SIZE~51}
+
+\Hypertarget{hmap_8h_a609683a0c8de0ce9cdd1e696e71a6f07}\index{hmap.h@{hmap.h}!KEY\_MAX@{KEY\_MAX}}
+\index{KEY\_MAX@{KEY\_MAX}!hmap.h@{hmap.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_MAX}{KEY\_MAX}}
+{\footnotesize\ttfamily \label{hmap_8h_a609683a0c8de0ce9cdd1e696e71a6f07} 
+\#define KEY\+\_\+\+MAX~17}
+
+\Hypertarget{hmap_8h_aacdeb883b8cfc24b1ea6133e987a556d}\index{hmap.h@{hmap.h}!VALUE\_MAX@{VALUE\_MAX}}
+\index{VALUE\_MAX@{VALUE\_MAX}!hmap.h@{hmap.h}}
+\doxysubsubsection{\texorpdfstring{VALUE\_MAX}{VALUE\_MAX}}
+{\footnotesize\ttfamily \label{hmap_8h_aacdeb883b8cfc24b1ea6133e987a556d} 
+\#define VALUE\+\_\+\+MAX~51}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{hmap_8h_ae2691160db1e529617604aeaa3f54077}\index{hmap.h@{hmap.h}!hashtable\_t@{hashtable\_t}}
+\index{hashtable\_t@{hashtable\_t}!hmap.h@{hmap.h}}
+\doxysubsubsection{\texorpdfstring{hashtable\_t}{hashtable\_t}}
+{\footnotesize\ttfamily \label{hmap_8h_ae2691160db1e529617604aeaa3f54077} 
+typedef struct \mbox{\hyperlink{struct_hash_table}{Hash\+Table}} \mbox{\hyperlink{hmap_8h_ae2691160db1e529617604aeaa3f54077}{hashtable\+\_\+t}}}
+
+\Hypertarget{hmap_8h_ab8e3cdf7da5dcf21b84260a056e65e87}\index{hmap.h@{hmap.h}!node\_t@{node\_t}}
+\index{node\_t@{node\_t}!hmap.h@{hmap.h}}
+\doxysubsubsection{\texorpdfstring{node\_t}{node\_t}}
+{\footnotesize\ttfamily \label{hmap_8h_ab8e3cdf7da5dcf21b84260a056e65e87} 
+typedef struct \mbox{\hyperlink{struct_node}{Node}} \mbox{\hyperlink{hmap_8h_ab8e3cdf7da5dcf21b84260a056e65e87}{node\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{hmap_8h_acac9cbaeea226ed297804c012dc12b16}\index{hmap.h@{hmap.h}!NodeType@{NodeType}}
+\index{NodeType@{NodeType}!hmap.h@{hmap.h}}
+\doxysubsubsection{\texorpdfstring{NodeType}{NodeType}}
+{\footnotesize\ttfamily \label{hmap_8h_acac9cbaeea226ed297804c012dc12b16} 
+enum \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16}{Node\+Type}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Integer@{Integer}!hmap.h@{hmap.h}}\index{hmap.h@{hmap.h}!Integer@{Integer}}}\Hypertarget{hmap_8h_acac9cbaeea226ed297804c012dc12b16a1e2f89e867cd91c3de2ea9fbd2ef96a3}\label{hmap_8h_acac9cbaeea226ed297804c012dc12b16} 
+Integer&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Float@{Float}!hmap.h@{hmap.h}}\index{hmap.h@{hmap.h}!Float@{Float}}}\Hypertarget{hmap_8h_acac9cbaeea226ed297804c012dc12b16ad67b0ee7230dcecb610254e4e5e589cd}\label{hmap_8h_acac9cbaeea226ed297804c012dc12b16} 
+Float&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{String@{String}!hmap.h@{hmap.h}}\index{hmap.h@{hmap.h}!String@{String}}}\Hypertarget{hmap_8h_acac9cbaeea226ed297804c012dc12b16ade17ec82ff106e0c2b4417f5ca231eae}\label{hmap_8h_acac9cbaeea226ed297804c012dc12b16} 
+String&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HashTable@{HashTable}!hmap.h@{hmap.h}}\index{hmap.h@{hmap.h}!HashTable@{HashTable}}}\Hypertarget{hmap_8h_acac9cbaeea226ed297804c012dc12b16a1630094451c40b6f110f0ec80c02baba}\label{hmap_8h_acac9cbaeea226ed297804c012dc12b16} 
+Hash\+Table&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{hmap_8h_a5c2f64663ed8dfb76218ba4bcbb7310c}\index{hmap.h@{hmap.h}!\_hash@{\_hash}}
+\index{\_hash@{\_hash}!hmap.h@{hmap.h}}
+\doxysubsubsection{\texorpdfstring{\_hash()}{\_hash()}}
+{\footnotesize\ttfamily \label{hmap_8h_a5c2f64663ed8dfb76218ba4bcbb7310c} 
+size\+\_\+t \+\_\+hash (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{size\+\_\+t}]{array\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the hash for the given key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & -\/ String containing the key \\
+\hline
+{\em array\+\_\+size} & -\/ Size of the hashtable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ Returns the hash 
+\end{DoxyReturn}

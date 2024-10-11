@@ -1,6 +1,6 @@
-#include "hmap.h"
 #include <assert.h>
 #include <neolog/neolog.h>
+#include "hmap.h"
 
 static const nlog_logger_t logger_config = {.LogLevel = DEBUG, .process_name = "neolib"};
 
@@ -18,7 +18,7 @@ size_t _hash(char* key, size_t array_size) {
     size_t hash = sum % req_arr;
     assert(hash <= req_arr);
 
-    nlog_log(&logger_config, DEBUG, "Calculated hash for %s, %d", key, hash);
+    nlog_log(&logger_config, DEBUG, "Calculated hash for '%s', %d", key, hash);
 
     return hash;
 }

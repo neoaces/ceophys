@@ -17,7 +17,7 @@ void nlog_log(const nlog_logger_t* logger_config, nlog_loglevel_t level, const c
 	char s[64];
 	strftime(s, 64, "%Y:%H:%M:%S", tm);
 	
-	printf("\033[31m[%s | %s | %s ]\033[0m ", s, nlog_levelstr(level), logger_config->process_name);
+	printf("\033[31m[%s | %s | %s ]\033[0m ", s, _nlog_levelstr(level), logger_config->process_name);
 	vprintf(message, args); // Uses the variadic arguments to print out the format specifiers.
 	printf("\n");
 	
@@ -27,7 +27,7 @@ void nlog_log(const nlog_logger_t* logger_config, nlog_loglevel_t level, const c
     va_end(args);
 }
 
-const char* nlog_levelstr(nlog_loglevel_t level) {
+const char* _nlog_levelstr(nlog_loglevel_t level) {
     switch (level) {
 	case ERROR:
 	    return "ERROR";

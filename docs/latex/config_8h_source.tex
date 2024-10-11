@@ -1,0 +1,29 @@
+\doxysection{config.\+h}
+\hypertarget{config_8h_source}{}\label{config_8h_source}\mbox{\hyperlink{config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*-\/*-\/\ mode:C;\ -\/*-\/\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*\ config.h.\ \ Generated\ from\ build/cmake/config.h.in\ by\ cmake\ configure\ */}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Ensure\ we\ have\ C99-\/style\ int64\_t,\ etc,\ all\ defined.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ First,\ we\ need\ to\ know\ if\ the\ system\ has\ already\ defined\ them.\ */}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ HAVE\_INTMAX\_T}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ HAVE\_UINTMAX\_T}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ Define\ to\ \`{}int'\ if\ <sys/types.h>\ doesn't\ define.\ */}}
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ \#undef\ pid\_t\ */}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{/*\ Define\ intmax\_t\ and\ uintmax\_t\ if\ they\ are\ not\ already\ defined.\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#if\ !defined(HAVE\_INTMAX\_T)}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ int64\_t\ intmax\_t;}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ INTMAX\_MIN\ INT64\_MIN}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ INTMAX\_MAX\ INT64\_MAX}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#if\ !defined(HAVE\_UINTMAX\_T)}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ uint64\_t\ uintmax\_t;}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
