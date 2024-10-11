@@ -48,20 +48,7 @@ set(CONFIG_HEADER ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 add_subdirectory(neolog)
 add_subdirectory(neolib)
 add_subdirectory(tests)
-
-add_executable(neophys 
-    main.c
-    main.h
-)
-
-target_link_libraries(neophys neolib neolog)
-target_include_directories(neophys PUBLIC
-                          "${PROJECT_BINARY_DIR}"
-                          "${PROJECT_SOURCE_DIR}/neolog"
-                          "${PROJECT_SOURCE_DIR}/neolib"
-                          )
-
-
+add_subdirectory(src)
 
 install(TARGETS neolib 
   RUNTIME DESTINATION bin
