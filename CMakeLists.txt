@@ -5,6 +5,10 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+IF (UNIX)
+    set(CHECK_INSTALL_DIR "usr/bin/check") 
+ENDIF(UNIX)
+
 ### CHECK CMAKE
 include(CheckCSourceCompiles)
 include(CheckCSourceRuns)
