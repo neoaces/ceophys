@@ -25,8 +25,8 @@ jobs:
     - name: Install pkg-config
       run: sudo apt-get install pkg-config
 
-    - name: Install check
-      run: sudo apt-get install check libcheck
+    - name: Clone check
+      run: git clone https://github.com/libcheck/check.git || cd ./check || mkdir build || cmake ../ || make
 
     - name: Check for check install dir
       run: dpkg -L check
