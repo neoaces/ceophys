@@ -97,6 +97,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">hmap.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Holds the implementation details for the hashmap and linked list.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 </div>
 <p><a href="hmap_8h_source.html">Go to the source code of this file.</a></p>
@@ -119,6 +122,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a7a0501a6ac2af99c458a3b9a387aeba2" id="r_a7a0501a6ac2af99c458a3b9a387aeba2"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="#acac9cbaeea226ed297804c012dc12b16">NodeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a0501a6ac2af99c458a3b9a387aeba2">nodetype_t</a></td></tr>
+<tr class="separator:a7a0501a6ac2af99c458a3b9a387aeba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8e3cdf7da5dcf21b84260a056e65e87" id="r_ab8e3cdf7da5dcf21b84260a056e65e87"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_node.html">Node</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8e3cdf7da5dcf21b84260a056e65e87">node_t</a></td></tr>
 <tr class="separator:ab8e3cdf7da5dcf21b84260a056e65e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2691160db1e529617604aeaa3f54077" id="r_ae2691160db1e529617604aeaa3f54077"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_hash_table.html">HashTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2691160db1e529617604aeaa3f54077">hashtable_t</a></td></tr>
@@ -131,6 +136,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#acac9cbaeea226ed297804c012dc12b16ade17ec82ff106e0c2b4417f5ca231eae">String</a> = 2
 , <a class="el" href="#acac9cbaeea226ed297804c012dc12b16a1630094451c40b6f110f0ec80c02baba">HashTable</a> = 3
  }</td></tr>
+<tr class="memdesc:acac9cbaeea226ed297804c012dc12b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the type of node. Allows for casting of the correct type in the.  <a href="#acac9cbaeea226ed297804c012dc12b16">More...</a><br /></td></tr>
 <tr class="separator:acac9cbaeea226ed297804c012dc12b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -139,7 +145,9 @@ Functions</h2></td></tr>
 <tr class="memdesc:a5c2f64663ed8dfb76218ba4bcbb7310c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the hash for the given key.  <br /></td></tr>
 <tr class="separator:a5c2f64663ed8dfb76218ba4bcbb7310c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Holds the implementation details for the hashmap and linked list. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aa40c2609604c572c89d9bf1063a0a08b" name="aa40c2609604c572c89d9bf1063a0a08b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa40c2609604c572c89d9bf1063a0a08b">&#9670;&#160;</a></span>CONFIG_SIZE</h2>
 
@@ -211,6 +219,20 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a7a0501a6ac2af99c458a3b9a387aeba2" name="a7a0501a6ac2af99c458a3b9a387aeba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a0501a6ac2af99c458a3b9a387aeba2">&#9670;&#160;</a></span>nodetype_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="#acac9cbaeea226ed297804c012dc12b16">NodeType</a> <a class="el" href="#a7a0501a6ac2af99c458a3b9a387aeba2">nodetype_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="acac9cbaeea226ed297804c012dc12b16" name="acac9cbaeea226ed297804c012dc12b16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acac9cbaeea226ed297804c012dc12b16">&#9670;&#160;</a></span>NodeType</h2>
@@ -223,11 +245,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Represents the type of node. Allows for casting of the correct type in the. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acac9cbaeea226ed297804c012dc12b16a1e2f89e867cd91c3de2ea9fbd2ef96a3" name="acac9cbaeea226ed297804c012dc12b16a1e2f89e867cd91c3de2ea9fbd2ef96a3"></a>Integer&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="acac9cbaeea226ed297804c012dc12b16ad67b0ee7230dcecb610254e4e5e589cd" name="acac9cbaeea226ed297804c012dc12b16ad67b0ee7230dcecb610254e4e5e589cd"></a>Float&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="acac9cbaeea226ed297804c012dc12b16ade17ec82ff106e0c2b4417f5ca231eae" name="acac9cbaeea226ed297804c012dc12b16ade17ec82ff106e0c2b4417f5ca231eae"></a>String&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acac9cbaeea226ed297804c012dc12b16a1630094451c40b6f110f0ec80c02baba" name="acac9cbaeea226ed297804c012dc12b16a1630094451c40b6f110f0ec80c02baba"></a>HashTable&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acac9cbaeea226ed297804c012dc12b16a1630094451c40b6f110f0ec80c02baba" name="acac9cbaeea226ed297804c012dc12b16a1630094451c40b6f110f0ec80c02baba"></a>HashTable&#160;</td><td class="fielddoc"><p>Hashtable struct. Uses a linked list to deal with collisions. </p>
+</td></tr>
 </table>
 
 </div>

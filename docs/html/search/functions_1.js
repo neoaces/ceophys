@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]]
+  ['nlog_5flog_0',['nlog_log',['../neolog_8c.html#a3fad4f0b5928113f1f9bb10321f66dd9',1,'nlog_log(const nlog_logger_t *logger_config, nlog_loglevel_t level, const char *message,...):&#160;neolog.c'],['../neolog_8h.html#a3fad4f0b5928113f1f9bb10321f66dd9',1,'nlog_log(const nlog_logger_t *logger_config, nlog_loglevel_t level, const char *message,...):&#160;neolog.c']]]
 ];

@@ -123,9 +123,11 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3fad4f0b5928113f1f9bb10321f66dd9" id="r_a3fad4f0b5928113f1f9bb10321f66dd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fad4f0b5928113f1f9bb10321f66dd9">nlog_log</a> (const <a class="el" href="#a0ed9d8a56543f24cd089da724c7e9222">nlog_logger_t</a> *logger_config, <a class="el" href="#a7c46f0ec0ea7fe6df2e284029dcc35f4">nlog_loglevel_t</a> level, const char *message,...)</td></tr>
+<tr class="memdesc:a3fad4f0b5928113f1f9bb10321f66dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs the message at the current level. Takes in a global logger_config to define if it is logged. Any number of variables can be included in the format specifier. There are no checks if there are not enough arguments for the format.  <br /></td></tr>
 <tr class="separator:a3fad4f0b5928113f1f9bb10321f66dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac31e18c39446ac8880fc81df34c49e3e" id="r_ac31e18c39446ac8880fc81df34c49e3e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac31e18c39446ac8880fc81df34c49e3e">nlog_levelstr</a> (<a class="el" href="#a7c46f0ec0ea7fe6df2e284029dcc35f4">nlog_loglevel_t</a> level)</td></tr>
-<tr class="separator:ac31e18c39446ac8880fc81df34c49e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa395cf007648b75649b739ba7013aa96" id="r_aa395cf007648b75649b739ba7013aa96"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa395cf007648b75649b739ba7013aa96">_nlog_levelstr</a> (<a class="el" href="#a7c46f0ec0ea7fe6df2e284029dcc35f4">nlog_loglevel_t</a> level)</td></tr>
+<tr class="memdesc:aa395cf007648b75649b739ba7013aa96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the current log level.  <br /></td></tr>
+<tr class="separator:aa395cf007648b75649b739ba7013aa96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a0ed9d8a56543f24cd089da724c7e9222" name="a0ed9d8a56543f24cd089da724c7e9222"></a>
@@ -179,20 +181,29 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ac31e18c39446ac8880fc81df34c49e3e" name="ac31e18c39446ac8880fc81df34c49e3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac31e18c39446ac8880fc81df34c49e3e">&#9670;&#160;</a></span>nlog_levelstr()</h2>
+<a id="aa395cf007648b75649b739ba7013aa96" name="aa395cf007648b75649b739ba7013aa96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa395cf007648b75649b739ba7013aa96">&#9670;&#160;</a></span>_nlog_levelstr()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char * nlog_levelstr </td>
+          <td class="memname">const char * _nlog_levelstr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a7c46f0ec0ea7fe6df2e284029dcc35f4">nlog_loglevel_t</a></td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a string representing the current log level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>LogLevel </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Name of LogLevel level </dd></dl>
 
 </div>
 </div>
@@ -224,6 +235,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Logs the message at the current level. Takes in a global logger_config to define if it is logged. Any number of variables can be included in the format specifier. There are no checks if there are not enough arguments for the format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger_config</td><td>The global configuration of the logger </td></tr>
+    <tr><td class="paramname">level</td><td>Level of logging for message message </td></tr>
+    <tr><td class="paramname">message</td><td>Log message </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
