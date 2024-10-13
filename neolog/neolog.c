@@ -1,8 +1,14 @@
 #include <assert.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 #include <time.h>
 #include "neolog.h"
+
+void nlog_logerr(const nlog_logger_t* logger_config, const char* message, size_t err) {
+    nlog_log(logger_config, ERROR, message);
+    exit(err);
+}
 
 void nlog_log(const nlog_logger_t* logger_config, nlog_loglevel_t level, const char* message, ...) {
     // General format: [ datetime | log level | process name ] message

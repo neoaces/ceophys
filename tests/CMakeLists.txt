@@ -10,5 +10,6 @@ target_include_directories(neolib PUBLIC
                           "${PROJECT_SOURCE_DIR}"
 )
 
+find_package(OpenGL)
 include(GoogleTest)
 gtest_discover_tests(neotest)

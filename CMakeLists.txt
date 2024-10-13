@@ -22,6 +22,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include(CTest)
 add_subdirectory(lib/googletest) # add googletest subdirectory
+add_subdirectory(lib/glfw)
 
 add_subdirectory(neolog)
 add_subdirectory(neolib)

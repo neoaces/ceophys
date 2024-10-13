@@ -1,4 +1,5 @@
 #pragma once
+#include <stdio.h>
 /**
  * @file Neolog
  * @brief Basic library for logging used in neophys.
@@ -45,3 +46,12 @@ void nlog_log(const nlog_logger_t* logger_config, nlog_loglevel_t level, const c
  * @return Name of LogLevel level
  */
 const char* _nlog_levelstr(nlog_loglevel_t level);
+
+/**
+ * @brief Logs an error, and exits on return
+ *
+ * @param logger_config The global configuration of the logger
+ * @param message Log message
+ * @param err Exit code
+ */
+void nlog_logerr(const nlog_logger_t* logger_config, const char* message, size_t err);

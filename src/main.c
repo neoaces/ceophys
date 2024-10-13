@@ -1,5 +1,6 @@
 #include <neolib/hmap.h>
 #include <neolog/neolog.h>
+#include "window.h"
 
 static const nlog_logger_t logger_config = {.LogLevel = DEBUG, "neophys"};
 
@@ -8,4 +9,7 @@ int main(void) {
     
     char* key = "jesus h. christ";
     size_t hash = _hash(key, 51);
+
+    window_init();
+    window_destroy();
 }
