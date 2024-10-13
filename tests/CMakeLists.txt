@@ -11,6 +11,7 @@ find_package(Check REQUIRED)
 include_directories(${CHECK_INCLUDE_DIRS})
 link_directories(${CHECK_LIBRARY_DIRS})
 
+cmake_minimum_required(VERSION 3.10)
 set(TEST_SOURCES
     hash_t.c
 )
