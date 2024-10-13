@@ -1,7 +1,7 @@
 #define CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 #define CIMGUI_USE_GLFW
 #define CIMGUI_USE_OPENGL3
-#define IMGUI_IMPL_OPENGL_ES3
+
 #include <cimgui/cimgui.h>
 #include <cimgui_impl.h>
 #include <glad/gl.h>
@@ -38,6 +38,7 @@ void window_init() {
 
     igCreateContext(NULL);
     ImGuiIO* ioptr = igGetIO();
+
     const char *glsl_version = "#version 150";
     ImGui_ImplGlfw_InitForOpenGL(window, true); 
     ImGui_ImplOpenGL3_Init(glsl_version);
@@ -61,65 +62,25 @@ void window_init() {
 	ImGui_ImplGlfw_NewFrame();
 	igNewFrame();
 
-	if (showDemoWindow)
-	    igShowDemoWindow(&showDemoWindow);
-
-	// show a simple window that we created ourselves.
 	{
-	    static float f = 0.0f;
-	    static int counter = 0;
-
 	    igBegin("Hello, world!", NULL, 0);
-	    igText("This is some useful text");
-	    igCheckbox("Demo window", &showDemoWindow);
-	    igCheckbox("Another window", &showAnotherWindow);
-
-	    igSliderFloat("Float", &f, 0.0f, 1.0f, "%.3f", 0);
-	    igColorEdit3("clear color", (float *)&clearColor, 0);
-
-	    ImVec2 buttonSize;
-	    buttonSize.x = 0;
-	    buttonSize.y = 0;
-	    if (igButton("Button", buttonSize))
-		counter++;
-	    igSameLine(0.0f, -1.0f);
-	    igText("counter = %d", counter);
-
 	    igText("Application average %.3f ms/frame (%.1f FPS)",
 		    1000.0f / igGetIO()->Framerate, igGetIO()->Framerate);
-	    igEnd();
-	}
-
-	if (showAnotherWindow) 
-	{
-	    igBegin("imgui Another Window", &showAnotherWindow, 0);
-	    igText("Hello from imgui");
-	    ImVec2 buttonSize;
-	    buttonSize.x = 0;
-	    buttonSize.y = 0;
-	    if (igButton("Close me", buttonSize)) {
-		showAnotherWindow = false;
-	    }
 	    igEnd();
 	}
 
 	// render
 	igRender();
 	glfwMakeContextCurrent(window);
+	
 	glViewport(0, 0, (int)ioptr->DisplaySize.x, (int)ioptr->DisplaySize.y);
+	
 	glClearColor(clearColor.x, clearColor.y, clearColor.z, clearColor.w);
 	glClear(GL_COLOR_BUFFER_BIT);
+	
 	ImGui_ImplOpenGL3_RenderDrawData(igGetDrawData());
-#ifdef IMGUI_HAS_DOCK
-	if (ioptr->ConfigFlags & ImGuiConfigFlags_ViewportsEnable) 
-	{
-	    GLFWwindow *backup_current_window = glfwGetCurrentContext();
-	    igUpdatePlatformWindows();
-	    igRenderPlatformWindowsDefault(NULL, NULL);
-	    glfwMakeContextCurrent(backup_current_window);
-	}
-#endif
-	glfwSwapBuffers(window);
+	
+	glfwSwapBuffers(window); // Swaps rendering buffer with screen buffer
     }
 
     // clean up
@@ -130,8 +91,3 @@ void window_init() {
     glfwDestroyWindow(window);
     glfwTerminate();   
 };
-
-void window_destroy() {
-};
-
-

@@ -12,6 +12,16 @@ set(IMGUI_SOURCES
     ${TABLES_SOURCE}
 )
 
+# FREETYPE
+option(IMGUI_FREETYPE "add Freetype2" ON)
+
+if(IMGUI_FREETYPE)
+	FIND_PACKAGE(freetype REQUIRED PATHS ${FREETYPE_PATH})
+	list(APPEND IMGUI_LIBRARIES freetype)
+	list(APPEND IMGUI_SOURCES ${CMAKE_SOURCE_DIR}/lib/cimgui/imgui/misc/freetype/imgui_freetype.cpp)
+	add_definitions("-DCIMGUI_FREETYPE=1")
+endif(IMGUI_FREETYPE)
+
 # OPENGL
 list(APPEND IMGUI_SOURCES ${BAKENDS_FOLDER}/imgui_impl_opengl3.cpp)
 list(APPEND IMGUI_SOURCES ${BAKENDS_FOLDER}/imgui_impl_glfw.cpp)

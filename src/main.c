@@ -11,5 +11,4 @@ int main(void) {
     size_t hash = _hash(key, 51);
 
     window_init();
-    window_destroy();
 }
