@@ -1,68 +1,31 @@
-project(neophys C)
 cmake_minimum_required(VERSION 3.10)
+project(neophys CXX C)
 
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+# GoogleTest requires at least C++14
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 99)
+
+if(CMAKE_COMPILER_IS_GNUCXX)
+    message("Using GCC")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage")
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    message("Using Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --coverage")
+else()
+    message(WARNING "Code coverage requires GCC or Clang. Compiler is ${CMAKE_CXX_COMPILER_ID}")
+endif()
+
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-IF (UNIX)
-    set(CHECK_INSTALL_DIR "usr/bin/check") 
-ENDIF(UNIX)
+enable_testing() # enables testing
 
-### CHECK CMAKE
-include(CheckCSourceCompiles)
-include(CheckCSourceRuns)
-include(CheckFunctionExists)
-include(CheckIncludeFile)
-include(CheckIncludeFiles)
-include(CheckLibraryExists)
-include(CheckSymbolExists)
-include(CheckTypeSize)
+add_subdirectory(lib/googletest) # add googletest subdirectory
+include(GoogleTest)
 
-# Check headers
-set(INCLUDES "")
-macro(ck_check_include_file header var)
-  check_include_files("${INCLUDES};${header}" ${var})
-  if(${var})
-    set(INCLUDES ${INCLUDES} ${header})
-  endif(${var})
-endmacro(ck_check_include_file)
-
-ck_check_include_file("stdlib.h" HAVE_STDLIB_H)
-check_type_size(intmax_t INTMAX_T)
-check_type_size(uintmax_t UINTMAX_T)
-
-check_type_size(pid_t PID_T)
-if(NOT HAVE_PID_T)
-  if(WIN32)
-    set(pid_t "int")
-  else(WIN32)
-    MESSAGE(FATAL_ERROR "pid_t doesn't exist on this platform?")
-  endif(WIN32)
-endif(NOT HAVE_PID_T)
-
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake/config.h.in
-  ${CMAKE_CURRENT_BINARY_DIR}/config.h)
-include_directories(BEFORE ${CMAKE_CURRENT_BINARY_DIR})
-add_definitions(-DHAVE_CONFIG_H)
-set(CONFIG_HEADER ${CMAKE_CURRENT_BINARY_DIR}/config.h)
-
-###############################################################################
-# Subdirectories
 add_subdirectory(neolog)
 add_subdirectory(neolib)
 add_subdirectory(tests)
 add_subdirectory(src)
-
-install(TARGETS neolib 
-  RUNTIME DESTINATION bin
-  LIBRARY DESTINATION lib
-  ARCHIVE DESTINATION lib
-)
-
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/main.h DESTINATION include)
-
-# Unit tests
-enable_testing()
-add_test(NAME neotest COMMAND neotest)
