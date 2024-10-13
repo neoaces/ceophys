@@ -1,14 +1,14 @@
-cmake_minimum_required(VERSION 3.10)
 set(TEST_SOURCES
-    hash_t.cpp
+    hmap.cpp
 )
 
 add_executable(neotest ${TEST_SOURCES})
-target_link_libraries(neotest neolib neolog gtest)
+target_link_libraries(neotest neolib gtest)
 
-target_include_directories(neotest PUBLIC
+target_include_directories(neolib PUBLIC
                           "${PROJECT_BINARY_DIR}"
-                          "${PROJECT_SOURCE_DIR}/neolog"
-                          "${PROJECT_SOURCE_DIR}/neolib"
-                          "${PROJECT_SOURCE_DIR}/lib/googletest/googletest/include"
+                          "${PROJECT_SOURCE_DIR}"
 )
+
+include(GoogleTest)
+gtest_discover_tests(neotest)

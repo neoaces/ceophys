@@ -1,5 +1,10 @@
 \doxysection{neolib/hmap.h File Reference}
 \hypertarget{hmap_8h}{}\label{hmap_8h}\index{neolib/hmap.h@{neolib/hmap.h}}
+
+
+Holds the implementation details for the hashmap and linked list.  
+
+
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
@@ -20,6 +25,8 @@ struct \mbox{\hyperlink{struct_hash_table}{Hash\+Table}}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
+typedef enum \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16}{Node\+Type}} \mbox{\hyperlink{hmap_8h_a7a0501a6ac2af99c458a3b9a387aeba2}{nodetype\+\_\+t}}
+\item 
 typedef struct \mbox{\hyperlink{struct_node}{Node}} \mbox{\hyperlink{hmap_8h_ab8e3cdf7da5dcf21b84260a056e65e87}{node\+\_\+t}}
 \item 
 typedef struct \mbox{\hyperlink{struct_hash_table}{Hash\+Table}} \mbox{\hyperlink{hmap_8h_ae2691160db1e529617604aeaa3f54077}{hashtable\+\_\+t}}
@@ -32,12 +39,17 @@ enum \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16}{Node\+Type}} \{
 , \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16ade17ec82ff106e0c2b4417f5ca231eae}{String}} = 2
 , \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16a1630094451c40b6f110f0ec80c02baba}{Hash\+Table}} = 3
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Represents the type of node. Allows for casting of the correct type in the. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 size\+\_\+t \mbox{\hyperlink{hmap_8h_a5c2f64663ed8dfb76218ba4bcbb7310c}{\+\_\+hash}} (char \texorpdfstring{$\ast$}{*}key, size\+\_\+t array\+\_\+size)
 \begin{DoxyCompactList}\small\item\em Calculates the hash for the given key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds the implementation details for the hashmap and linked list. 
+
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -74,6 +86,12 @@ typedef struct \mbox{\hyperlink{struct_hash_table}{Hash\+Table}} \mbox{\hyperlin
 {\footnotesize\ttfamily \label{hmap_8h_ab8e3cdf7da5dcf21b84260a056e65e87} 
 typedef struct \mbox{\hyperlink{struct_node}{Node}} \mbox{\hyperlink{hmap_8h_ab8e3cdf7da5dcf21b84260a056e65e87}{node\+\_\+t}}}
 
+\Hypertarget{hmap_8h_a7a0501a6ac2af99c458a3b9a387aeba2}\index{hmap.h@{hmap.h}!nodetype\_t@{nodetype\_t}}
+\index{nodetype\_t@{nodetype\_t}!hmap.h@{hmap.h}}
+\doxysubsubsection{\texorpdfstring{nodetype\_t}{nodetype\_t}}
+{\footnotesize\ttfamily \label{hmap_8h_a7a0501a6ac2af99c458a3b9a387aeba2} 
+typedef enum \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16}{Node\+Type}} \mbox{\hyperlink{hmap_8h_a7a0501a6ac2af99c458a3b9a387aeba2}{nodetype\+\_\+t}}}
+
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -82,6 +100,10 @@ typedef struct \mbox{\hyperlink{struct_node}{Node}} \mbox{\hyperlink{hmap_8h_ab8
 \doxysubsubsection{\texorpdfstring{NodeType}{NodeType}}
 {\footnotesize\ttfamily \label{hmap_8h_acac9cbaeea226ed297804c012dc12b16} 
 enum \mbox{\hyperlink{hmap_8h_acac9cbaeea226ed297804c012dc12b16}{Node\+Type}}}
+
+
+
+Represents the type of node. Allows for casting of the correct type in the. 
 
 \begin{DoxyEnumFields}[2]{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Integer@{Integer}!hmap.h@{hmap.h}}\index{hmap.h@{hmap.h}!Integer@{Integer}}}\Hypertarget{hmap_8h_acac9cbaeea226ed297804c012dc12b16a1e2f89e867cd91c3de2ea9fbd2ef96a3}\label{hmap_8h_acac9cbaeea226ed297804c012dc12b16} 
@@ -97,7 +119,7 @@ String&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{HashTable@{HashTable}!hmap.h@{hmap.h}}\index{hmap.h@{hmap.h}!HashTable@{HashTable}}}\Hypertarget{hmap_8h_acac9cbaeea226ed297804c012dc12b16a1630094451c40b6f110f0ec80c02baba}\label{hmap_8h_acac9cbaeea226ed297804c012dc12b16} 
-Hash\+Table&\\
+Hash\+Table&Hashtable struct. Uses a linked list to deal with collisions. \\
 \hline
 
 \end{DoxyEnumFields}
