@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(neophys CXX C)
-
+enable_testing()
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_C_STANDARD 99)
@@ -20,10 +20,8 @@ endif()
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-enable_testing() # enables testing
-
+include(CTest)
 add_subdirectory(lib/googletest) # add googletest subdirectory
-include(GoogleTest)
 
 add_subdirectory(neolog)
 add_subdirectory(neolib)
