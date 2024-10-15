@@ -10,5 +10,6 @@ int main(void) {
     char* key = "jesus h. christ";
     size_t hash = _hash(key, 51);
 
-    window_init();
+    windowconfig_t* config = window_init();
+    window_destroy(config);
 }
