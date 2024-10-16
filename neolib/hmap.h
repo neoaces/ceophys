@@ -20,6 +20,9 @@ typedef enum NodeType {
     Float = 1,
     String = 2,
     HashTable = 3,
+    Vec2 = 4,
+    Vec3 = 5,
+    RigidBody = 6 
 } nodetype_t;
 
 /**
@@ -52,3 +55,5 @@ typedef struct HashTable {
  * @return - Returns the hash
  */
 size_t _hash(char* key, size_t array_size);
+
+

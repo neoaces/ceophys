@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <glad/gl.h>
 #include <neolog/neolog.h>
 #include <stdlib.h>
@@ -11,7 +12,7 @@ windowconfig_t* window_init() {
     windowconfig_t* config = malloc(sizeof(windowconfig_t));
 
     if (!glfwInit()) {
-	exit(-1);
+	nlog_logerr(&logger_config, "GLFW did not initialize. Aborting.", -1);
     }
 
     // Set GLFW defaults
@@ -34,47 +35,19 @@ windowconfig_t* window_init() {
     igCreateContext(NULL);
     config->ioptr = igGetIO();
 
-    const char *glsl_version = "#version 150";
+    const char *glsl_version = "#version 150"; // Recommended version for MacOS TODO: change to 130 for other platforms
     ImGui_ImplGlfw_InitForOpenGL(config->window, true); 
     ImGui_ImplOpenGL3_Init(glsl_version);
 
-    bool showDemoWindow = true;
-    bool showAnotherWindow = false;
+    // TODO allow customization of background
+    config->clearColor.x = 0.45f;
+    config->clearColor.y = 0.55f;
+    config->clearColor.z = 0.60f;
+    config->clearColor.w = 1.00f;
     
-    ImVec4 clearColor = {.x = 0.45f, .y = 0.55f, .z = 0.60f, .w = 1.00f};
-
-    // main event loop
-    bool quit = false;
-    while (!glfwWindowShouldClose(config->window))
-    {
-	glfwPollEvents();
-
-	// start imgui frame
-	ImGui_ImplOpenGL3_NewFrame();
-	ImGui_ImplGlfw_NewFrame();
-	igNewFrame();
-
-	{
-	    igBegin("Hello, world!", NULL, 0);
-	    igText("Application average %.3f ms/frame (%.1f FPS)",
-		    1000.0f / igGetIO()->Framerate, igGetIO()->Framerate);
-	    igEnd();
-	}
-
-	// render
-	igRender();
-	glfwMakeContextCurrent(config->window);
-	
-	glViewport(0, 0, (int)config->ioptr->DisplaySize.x, (int)config->ioptr->DisplaySize.y);
-	
-	glClearColor(clearColor.x, clearColor.y, clearColor.z, clearColor.w);
-	glClear(GL_COLOR_BUFFER_BIT);
-	
-	ImGui_ImplOpenGL3_RenderDrawData(igGetDrawData());
-	
-	glfwSwapBuffers(config->window); // Swaps rendering buffer with screen buffer
-    }
-
+    assert(config->ioptr != NULL);
+    assert(config->window != NULL);
+    
     return config;
 };
 

@@ -10,6 +10,7 @@
 typedef struct WindowConfig {
     GLFWwindow* window;
     ImGuiIO* ioptr;
+    ImVec4 clearColor;
 } windowconfig_t;
 
 windowconfig_t* window_init();

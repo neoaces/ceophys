@@ -30,9 +30,10 @@ add_library(cimgui STATIC ${IMGUI_SOURCES})
 target_compile_definitions(cimgui PUBLIC "-DIMGUI_IMPL_API=extern \"C\" ")
 target_link_libraries(cimgui glfw "-framework OpenGL")
 add_executable(neophys 
+    engine.c
     main.c
-    window.h
     window.c
+    app.c
     ${CMAKE_SOURCE_DIR}/lib/glad/src/gl.c
     ${CMAKE_SOURCE_DIR}/lib/cimgui/cimgui.cpp
 )
