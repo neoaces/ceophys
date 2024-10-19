@@ -21,8 +21,10 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include(CTest)
+include_directories(static)
 add_subdirectory(lib/googletest) # add googletest subdirectory
 add_subdirectory(lib/glfw)
+#add_subdirectory(lib/cimgui)
 
 add_subdirectory(neolog)
 add_subdirectory(neolib)

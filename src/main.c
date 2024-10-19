@@ -1,15 +1,14 @@
-#include <neolib/hmap.h>
 #include <neolog/neolog.h>
+#include "app.h"
+#include <neolib/engine.h>
 #include "window.h"
 
-static const nlog_logger_t logger_config = {.LogLevel = DEBUG, "neophys"};
-
 int main(void) {
-    nlog_log(&logger_config, DEBUG, "Test", 5);
+    systemstate_t* state = system_init(0.05);
     
-    char* key = "jesus h. christ";
-    size_t hash = _hash(key, 51);
-
-    window_init();
-    window_destroy();
+    windowconfig_t* config = window_init(state);
+    run(config, state);
+    system_destroy(state);
+    
+    return 0;
 }
