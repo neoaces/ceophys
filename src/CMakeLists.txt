@@ -13,14 +13,14 @@ set(IMGUI_SOURCES
 )
 
 # FREETYPE
-option(IMGUI_FREETYPE "add Freetype2" ON)
+# option(IMGUI_FREETYPE "add Freetype2" ON)
 
-if(IMGUI_FREETYPE)
-	FIND_PACKAGE(freetype REQUIRED PATHS ${FREETYPE_PATH})
-	list(APPEND IMGUI_LIBRARIES freetype)
-	list(APPEND IMGUI_SOURCES ${CMAKE_SOURCE_DIR}/lib/cimgui/imgui/misc/freetype/imgui_freetype.cpp)
-	add_definitions("-DCIMGUI_FREETYPE=1")
-endif(IMGUI_FREETYPE)
+# if(IMGUI_FREETYPE)
+# 	FIND_PACKAGE(freetype REQUIRED PATHS ${FREETYPE_PATH})
+# 	list(APPEND IMGUI_LIBRARIES freetype)
+# 	list(APPEND IMGUI_SOURCES ${CMAKE_SOURCE_DIR}/lib/cimgui/imgui/misc/freetype/imgui_freetype.cpp)
+# 	add_definitions("-DCIMGUI_FREETYPE=1")
+# endif(IMGUI_FREETYPE)
 
 # OPENGL
 list(APPEND IMGUI_SOURCES ${BAKENDS_FOLDER}/imgui_impl_opengl3.cpp)
@@ -30,7 +30,6 @@ add_library(cimgui STATIC ${IMGUI_SOURCES})
 target_compile_definitions(cimgui PUBLIC "-DIMGUI_IMPL_API=extern \"C\" ")
 target_link_libraries(cimgui glfw "-framework OpenGL")
 add_executable(neophys 
-    engine.c
     main.c
     window.c
     app.c

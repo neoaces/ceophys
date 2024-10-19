@@ -1,5 +1,5 @@
 #pragma once
-#include "engine.h"
+#include <neolib/engine.h>
 #include "window.h"
 
 /**

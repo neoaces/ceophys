@@ -1,5 +1,5 @@
 #pragma once
-#include <stdio.h>
+#include <stdio.h> // IWYU pragma: keep
 /**
  * @file Neolog
  * @brief Basic library for logging used in neophys.
