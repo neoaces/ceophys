@@ -1,2 +1,7 @@
 #pragma once
 #define CIRCLE_RES 32
+#define GRAVITATIONAL_CONSTANT 6.67430E-11
+// G_CONSTANT = (6.6743E-11 * 5.97217E24) / (6371 * 1000)^2 // Taken from NASA
+#define G_CONSTANT 9.8202529633
+#define MAX_BODIES 50
+#define MAX_FORCES 50
