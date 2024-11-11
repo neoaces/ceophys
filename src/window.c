@@ -1,6 +1,5 @@
 #include <assert.h>
 #include <glad/gl.h>
-#include <math.h>
 #include <neolib/engine.h>
 #include <neolib/constants.h>
 #include <neolog/neolog.h>
@@ -82,7 +81,7 @@ windowconfig_t* window_init(systemstate_t* state) {
     glDeleteShader(fragmentShader);
     
     float circle[CIRCLE_RES*2] = {0.0f, 0.0f};
-    generate_circle(state, circle);
+    generate_circle(state->bodies[0], state, circle);
     
     // Generate the state->VAO and state->VBO with only 1 object each
     glGenVertexArrays(1, &state->VAO);
@@ -105,7 +104,7 @@ windowconfig_t* window_init(systemstate_t* state) {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
-    state->size = 50.0f;
+    state->particle_size = 50.0f;
     state->width = 3420.0f;
     state->height = 2082.0f;
 
@@ -116,7 +115,7 @@ windowconfig_t* window_init(systemstate_t* state) {
 
     // Exporting variables to shaders
     glUseProgram(state->shader_obj);
-    glUniform1f(glGetUniformLocation(state->shader_obj, "size"), state->size);
+    glUniform1f(glGetUniformLocation(state->shader_obj, "size"), state->particle_size);
     glUniform1f(glGetUniformLocation(state->shader_obj, "width"), state->width);
     glUniform1f(glGetUniformLocation(state->shader_obj, "height"), state->height);
     glUniform4f(glGetUniformLocation(state->shader_obj, "color"), state->particle_color[0], state->particle_color[1], state->particle_color[2], state->particle_color[3]);
