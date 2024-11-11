@@ -1,10 +1,11 @@
 #include <neolog/neolog.h>
 #include "app.h"
 #include <neolib/engine.h>
+#include <stdbool.h>
 #include "window.h"
 
 int main(void) {
-    systemstate_t* state = system_init(0.05);
+    systemstate_t* state = system_init(0.05, true);
     
     windowconfig_t* config = window_init(state);
     run(config, state);
