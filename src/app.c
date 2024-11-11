@@ -28,14 +28,13 @@ int render(windowconfig_t* config, systemstate_t* state) {
 			state->height = display_h;
 		}
 
-
 		glUseProgram(state->shader_obj);
 	    // Bind the state->VBO specifying it's a GL_ARRAY_BUFFER
 		glBindBuffer(GL_ARRAY_BUFFER, state->VBO);
 		
 		float circle[CIRCLE_RES * 2];
-		generate_circle(state, circle);
-		nlog_log(&log_config, DEBUG, "Current screen X component: %f", state->width);
+		generate_circle(state->bodies[0], state, circle);
+
 		// Introduce the vertices into the state->VBO
 		glBufferData(GL_ARRAY_BUFFER, sizeof(circle), circle, GL_STATIC_DRAW);	
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -47,27 +46,28 @@ int render(windowconfig_t* config, systemstate_t* state) {
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 32);
 		glBindVertexArray(0);
 
+		// IMGUI MENU UI ELEMENTS
 		{
 			igBegin("Hello, world!", NULL, 0);
 			igText("Width: %d, Height: %d", display_w, display_h);
 			igText("Application average %.3f ms/frame (%.1f FPS)",
 				1000.0f / igGetIO()->Framerate, igGetIO()->Framerate);
 			igSliderFloat("Timestep (del s)", &state->time_step, 0.015f, 1.0f, "%.3f", 0);
-			igSliderFloat("Size of circle", &state->size, 0.0f, display_h, "%.3f", 0);
+			igSliderFloat("Size of circle", &state->particle_size, 0.0f, display_h, "%.3f", 0);
 			igText("Fill Color");
 			igSliderFloat("R:", &state->particle_color[0], 0.0f, 1.0f, "%.2f", 0);
 			igSliderFloat("G:", &state->particle_color[1], 0.0f, 1.0f, "%.2f", 0);
 			igSliderFloat("B:", &state->particle_color[2], 0.0f, 1.0f, "%.2f", 0);
 			igSliderFloat("A:", &state->particle_color[3], 0.0f, 1.0f, "%.2f", 0);
-			igSliderFloat("Circle X:", &state->body->s[0], -(display_w / 2.0f), display_w / 2.0f, "%.2f", 0);
-			igSliderFloat("Circle Y:", &state->body->s[1], -(display_h / 2.0f), display_h / 2.0f, "%.2f", 0);
+			igSliderFloat("Circle X:", &state->bodies[0]->s[0], -(display_w / 2.0f), display_w / 2.0f, "%.2f", 0);
+			igSliderFloat("Circle Y:", &state->bodies[0]->s[1], -(display_h / 2.0f), display_h / 2.0f, "%.2f", 0);
 			
 			igEnd();
 		}
 
 		// Export variables to shader
 		glUseProgram(state->shader_obj);
-		glUniform1f(glGetUniformLocation(state->shader_obj, "size"), state->size);
+		glUniform1f(glGetUniformLocation(state->shader_obj, "size"), state->particle_size);
 		glUniform4f(glGetUniformLocation(state->shader_obj, "color"), state->particle_color[0], state->particle_color[1], state-> particle_color[2], state->particle_color[3]);
 
 		// render
