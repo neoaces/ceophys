@@ -1,18 +1,16 @@
-#include "window.h"
+#include <neolib/window.h>
+#include <neolib/neolib.h>
 #include <raylib.h>
 #include <stdio.h>
 
 int main() {
-    sconfig_t config = {.width = 800, .height = 450};
+    sconfig_t config = {.width = 1920, .height = 1080};
     
     window_init(&config);
 
     // Main game loop
     while (!WindowShouldClose()) {
-        BeginDrawing();
-            ClearBackground(RAYWHITE);
-            DrawCircle(120, 120, 20, BLACK); 
-        EndDrawing();
+        draw();
     }
 
     window_close();
