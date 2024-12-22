@@ -1,3 +1,4 @@
+#include "constants.h"
 #include "window.h"
 #include <raylib.h>
 #define RAYGUI_IMPLEMENTATION
@@ -5,6 +6,7 @@
 
 void draw(config_t* config) {
     BeginDrawing();
+
     Color background = {.r = 2, .g = 46, .b = 58, .a = 255};
     ClearBackground(background);
 
@@ -14,7 +16,7 @@ void draw(config_t* config) {
 
     for (int i = 0; i < config->objects; i++) {
         body_t* body = config->bodies[i];
-        DrawCircle(body->x * 10.0f, body->y * 10.0f, body->size * 10.0f, body->color);
+        DrawCircle(body->x * M_TO_PX, body->y * M_TO_PX, body->size * M_TO_PX, body->color);
     }
 
     EndDrawing();
