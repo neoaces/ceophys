@@ -1,3 +1,3 @@
 #pragma once
-
-void draw();
+#include "engine.h"
+#include "window.h"
