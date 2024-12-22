@@ -5,7 +5,8 @@
 
 void draw(config_t* config) {
     BeginDrawing();
-    ClearBackground(RAYWHITE);
+    Color background = {.r = 2, .g = 46, .b = 58, .a = 255};
+    ClearBackground(background);
 
     GuiGroupBox((Rectangle){ 20, 20, 276, 312 }, "STANDARD");
     GuiTextBox((Rectangle){ 30, 67, 120, 24 }, "TEXT 1", 128, false);
@@ -22,7 +23,8 @@ void draw(config_t* config) {
 void window_init(sconfig_t *config) {
     InitWindow(config->width, config->height, "neophys");
     SetTargetFPS(60);
-    GuiSetStyle(DEFAULT, TEXT_SIZE, 15);
+    GuiLoadStyle("./static/style.rgs");
+    GuiSetStyle(DEFAULT, TEXT_SIZE, 20);
 }
 
 void window_close() {
