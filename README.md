@@ -1,3 +1,5 @@
+# neophys - an elementary physics engine
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -23,7 +25,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here's a blank template to get started. To avoid retyping too much info, do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`, `project_license`
+neophys was originally started as a way to supplement the SPH4U course in the Ontario high school curriculum. ceotest, or as it is called as of writing, is a rewrite to be worked alongside the differential equations and numerical methods courses in the University of Waterloo.
 
 <!-- GETTING STARTED -->
 ## Getting Started
