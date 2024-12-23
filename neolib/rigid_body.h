@@ -20,6 +20,7 @@ typedef struct Body {
     float x;
     float y;
     float size;
+    float mass; // m [kg]
     shape_e shape;
     Color color;
 } body_t;
