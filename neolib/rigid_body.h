@@ -8,6 +8,7 @@
 typedef enum Shape {
     Circle,
     Square,
+    Anchor, // Shape, no real size
 } shape_e;
 
 /**
