@@ -1,3 +1,4 @@
+#pragma once
 /**
  * @brief 2-dimensional vector.
  * 
