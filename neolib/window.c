@@ -10,14 +10,14 @@ void draw(config_t* config) {
     
     for (int i = 0; i < config->objects; i++) {
         body_t* body = config->bodies[i];
-        DrawCircle(body->x * M_TO_PX, body->y * M_TO_PX, body->size * M_TO_PX, body->color);
+        DrawCircle(body->x.x * M_TO_PX, body->x.y * M_TO_PX, body->size * M_TO_PX, body->color);
     }
     
     GuiLabel((Rectangle){ 20, 20, 300, 20 }, "neophys - a physics engine simulator");
     GuiGroupBox((Rectangle){ 20, 60, 276, 312 }, "STANDARD");
     GuiLabel((Rectangle){ 30, 75, 200, 20 }, "object 1");
-    GuiSliderBar((Rectangle){ 30, 95, 200, 20 }, "", " X", &config->bodies[0]->x, 0.0f, (config->window_config.width / 10.0f));
-    GuiSliderBar((Rectangle){ 30, 125, 200, 20 }, "", " Y", &config->bodies[0]->y, 0.0f, (config->window_config.height / 10.0f));
+    GuiSliderBar((Rectangle){ 30, 95, 200, 20 }, "", " X", &config->bodies[0]->x.x, 0.0f, (config->window_config.width / 10.0f));
+    GuiSliderBar((Rectangle){ 30, 125, 200, 20 }, "", " Y", &config->bodies[0]->x.y, 0.0f, (config->window_config.height / 10.0f));
 
 
     EndDrawing();
