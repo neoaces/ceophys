@@ -2,15 +2,14 @@
 #include "constants.h"
 #include "engine.h"
 #include "raylib.h"
-#include "rigid_body.h"
+#include "particle.h"
 
 void engine_init(config_t* config) {
     // TEST IMPLEMENTATION: add a body by default
-    config->objects = 1;
 
-    body_t** bodies = calloc(64, sizeof(body_t*));
+    particle_t** bodies = calloc(64, sizeof(particle_t*));
+    particle_t* test_body = malloc(sizeof(particle_t));
 
-    body_t* test_body = malloc(sizeof(body_t));
     test_body->x.x = config->window_config.width / 20.0f;
     test_body->x.y = config->window_config.height / 20.0f;
     test_body->color = BLACK;
@@ -20,4 +19,5 @@ void engine_init(config_t* config) {
     bodies[0] = test_body;
 
     config->bodies = bodies;
+    config->n_bodies = 1;
 }

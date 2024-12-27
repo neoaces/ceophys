@@ -8,8 +8,8 @@ void draw(config_t* config) {
     BeginDrawing();
     ClearBackground(WHITE);
     
-    for (int i = 0; i < config->objects; i++) {
-        body_t* body = config->bodies[i];
+    for (int i = 0; i < config->n_bodies; i++) {
+        particle_t* body = config->bodies[i];
         DrawCircle(body->x.x * M_TO_PX, body->x.y * M_TO_PX, body->size * M_TO_PX, body->color);
     }
     

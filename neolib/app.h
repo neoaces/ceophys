@@ -1,6 +1,6 @@
 #pragma once
 #include <stdio.h>
-#include "rigid_body.h"
+#include "particle.h"
 
 /**
  * @brief Configuration for the raylib window
@@ -18,8 +18,8 @@ typedef struct ScreenConfig {
 // TODO: Should be named as the engine state, or should be adequately abstracted.
 typedef struct AppConfig {
     sconfig_t window_config;
-    size_t objects;
-    body_t** bodies;
+    size_t n_bodies;
+    particle_t** bodies;
 } config_t;
 
 
