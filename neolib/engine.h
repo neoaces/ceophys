@@ -6,4 +6,5 @@
  * 
  * @param config Global program configuration
  */
-void engine_init(config_t* config);
+config_t* engine_init();
+void engine_step(config_t* config);

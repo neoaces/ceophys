@@ -22,6 +22,7 @@ typedef enum Shape {
 typedef struct Particle {
     vec2 x;
     vec2 v;
+    float GUI_F; // Take last value of f non-zero.
     float f; // Force accumulator
     size_t nf; // Number of forces currently in the accumulator
     float size;

@@ -1,6 +1,7 @@
 #pragma once
 #include <stdio.h>
 #include "particle.h"
+#include "force.h"
 
 /**
  * @brief Configuration for the raylib window
@@ -18,8 +19,10 @@ typedef struct ScreenConfig {
 // TODO: Should be named as the engine state, or should be adequately abstracted.
 typedef struct AppConfig {
     sconfig_t window_config;
-    size_t n_bodies;
     particle_t** bodies;
+    int n_bodies;
+    force_t** forces;
+    int n_forces;
 } config_t;
 
 
