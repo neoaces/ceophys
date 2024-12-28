@@ -43,6 +43,7 @@ endif()
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+add_subdirectory(lib/neolog)
 add_subdirectory(neolib)
 add_subdirectory(src)
 
