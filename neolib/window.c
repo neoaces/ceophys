@@ -24,6 +24,11 @@ BeginDrawing();
     GuiLabel((Rectangle){ 30, 215, 600, 20 }, TextFormat("FORCE: %.4fN", config->bodies[0]->f));
     GuiLabel((Rectangle){ 30, 240, 600, 20 }, TextFormat("MASS: %fkg", config->bodies[0]->mass));
 
+    int seconds = (int) GetTime() % 60;
+    int minutes = (int) GetTime() / 60;
+
+    GuiLabel((Rectangle){ 30, 300, 600, 20 }, TextFormat("CURRENT TIME: %02i:%02i", minutes, seconds));
+
 EndDrawing();
 }
 
