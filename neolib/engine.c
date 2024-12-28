@@ -62,8 +62,21 @@ void engine_step(config_t* sys) {
         sys->bodies[i]->f = 0;
     }
 
-    // 2. Calculate forces for all objects
+    // 2. Collision detection
+    engine_detect_collisions(sys);
+
+    // 3. Calculate forces for all objects
     engine_iterf(sys);
 
-    // 3. Solve
+    // 4. Solve
+    engine_solve(sys);
+};
+
+void engine_solve(config_t *config) {
+    float dt = GetFrameTime();
+}
+
+void engine_detect_collisions(config_t* config) {
+    // TEST: simple collision detection with walls
+    
 };
