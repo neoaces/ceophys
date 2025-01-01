@@ -12,6 +12,5 @@ void apply_f(force_t* force) {
 
 float force_gravity(particle_t* particle) {
     float val = particle->mass * G;
-    nlog_log(&config, INFO, "Current force of gravity: %f", val);
     return particle->mass * G;
 }

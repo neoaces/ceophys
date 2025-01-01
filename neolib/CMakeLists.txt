@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-add_library(neolib STATIC neolib.c engine.c window.c force.c)
+add_library(neolib STATIC neolib.c engine.c window.c force.c solver.c)
 
 target_link_libraries(neolib neolog raylib)
 

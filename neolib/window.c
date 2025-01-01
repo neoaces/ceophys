@@ -23,6 +23,12 @@ BeginDrawing();
     GuiLabel((Rectangle){ 30, 190, 600, 20 }, TextFormat("# OF FORCES: %d", config->n_forces));
     GuiLabel((Rectangle){ 30, 215, 600, 20 }, TextFormat("FORCE: %.4fN", config->bodies[0]->f));
     GuiLabel((Rectangle){ 30, 240, 600, 20 }, TextFormat("MASS: %fkg", config->bodies[0]->mass));
+    GuiLabel((Rectangle){ 30, 270, 600, 20 }, TextFormat("[%f, %f, %f, %f]", 
+        config->bodies[0]->x.x,
+        config->bodies[0]->x.y,
+        config->bodies[0]->v.x,
+        config->bodies[0]->v.y
+    ));
 
     int seconds = (int) GetTime() % 60;
     int minutes = (int) GetTime() / 60;
